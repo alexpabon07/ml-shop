@@ -1,13 +1,73 @@
+@import "./grid";
 @import "./variables";
 
 html,
 body {
-    background-color: $bg-color-grey;
-    margin: 0 auto;
-    overflow-x: hidden;
+  background-color: $bg-color-grey;
+  margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+
+  .navbar {
+    align-items: center;
+    background-color: $bg-color-yellow;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    padding: 10px 0 5px 0;
+  }
+
+  .list-product {
+    flex-direction: column !important;
+  }
+
+  .product {
+    background-color: $bg-color-white;
+    margin: $line-spacing-small auto $line-spacing-small auto;
+    padding: 10px;
+    width: 90%;
+  }
+
+  .detail-product {
+    background-color: $bg-color-white;
+    margin: $line-spacing-small auto $line-spacing-small auto;
+    padding: 10px;
+    width: 90%;
+  }
+
+  .font-size-12 {
+    font-size: $font-size-12;
+  }
+
+  .font-size-14 {
+    font-size: $font-size-14;
+  }
+
+  .font-size-16 {
+    font-size: $font-size-16;
+  }
+
+  .font-size-24 {
+    font-size: $font-size-24;
+  }
+
+  .font-size-28 {
+    font-size: $font-size-28;
+  }
+
+  .font-size-46 {
+    font-size: $font-size-46;
+  }
+
+  .line-spacing-small {
+    line-height: $line-spacing-small;
+  }
+
+  .line-spacing-large {
+    line-height: $line-spacing-large;
+  }
 }
