@@ -42,6 +42,10 @@ $spacing-large: 32px;
     font-size: $font-size-46;
 }
 
+.margin-small {
+    margin: $spacing-small;
+}
+
 .margin-top-small {
     margin-top: $spacing-small;
 }
@@ -58,10 +62,18 @@ $spacing-large: 32px;
     margin-bottom: $spacing-large;
 }
 
-.margin-left {
+.margin-left-small {
+    margin-left: $spacing-small;
+}
+
+.margin-rigth-small {
+    margin-right: $spacing-small;
+}
+
+.margin-left-large {
     margin-left: $spacing-large;
 }
 
-.margin-rigth {
+.margin-rigth-large {
     margin-right: $spacing-large;
 }

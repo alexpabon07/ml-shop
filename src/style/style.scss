@@ -53,10 +53,15 @@ body {
 
   .product {
     background-color: $bg-color-white;
-    margin: $spacing-small auto $spacing-small auto;
+    margin: 0 auto 0 auto;
     padding: 10px;
     width: 90%;
-    border-bottom: 1px black solid;
+    border-bottom: 2px $bg-color-grey solid;
+
+    #img-product {
+      height: 180px;
+      width: 180px;
+    }
   }
 
   .detail-product {
@@ -64,6 +69,14 @@ body {
     margin: $spacing-small auto $spacing-small auto;
     padding: 10px;
     width: 90%;
+
+    button {
+      background-color: $bg-color-blue;
+      border-style: none;
+      color: white;
+      height: 35px;
+      width: 70%;
+    }
   }
 
   .align-item-center {
