@@ -1,7 +1,7 @@
-$bg-color-grey: #EEEEEE;
+$bg-color-grey: #eeeeee;
 $bg-color-white: white;
-$bg-color-yellow: #FFE600;
-$bg-color-blue: #3483FA;
+$bg-color-yellow: #ffe600;
+$bg-color-blue: #3483fa;
 
 $text-color-black: #333333;
 $text-color-dark-grey: #666666;
@@ -14,5 +14,45 @@ $font-size-24: 24px;
 $font-size-28: 28px;
 $font-size-46: 46px;
 
-$line-spacing-small: 16px;
-$line-spacing-large: 32px;
+$spacing-small: 16px;
+$spacing-large: 32px;
+
+.font-size-12 {
+    font-size: $font-size-12;
+}
+
+.font-size-14 {
+    font-size: $font-size-14;
+}
+
+.font-size-16 {
+    font-size: $font-size-16;
+}
+
+.font-size-24 {
+    font-size: $font-size-24;
+}
+
+.font-size-28 {
+    font-size: $font-size-28;
+}
+
+.font-size-46 {
+    font-size: $font-size-46;
+}
+
+.margin-top-small {
+    margin-top: $spacing-small;
+}
+
+.margin-bottom-small {
+    margin-bottom: $spacing-small;
+}
+
+.margin-left {
+    margin-left: $spacing-large;
+}
+
+.margin-rigth {
+    margin-right: $spacing-large;
+}
