@@ -12,7 +12,7 @@ export default class Product extends React.Component {
           </div>
           <div className="col-9">
             <div className="row">
-              <div className="col-8 font-size-16">Precio</div>
+              <div className="col-8 font-size-24">Precio</div>
               <div className="col-4 font-size-12">Ciudad</div>
             </div>
             <div className="row margin-top-large">
