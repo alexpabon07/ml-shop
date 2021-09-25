@@ -1,54 +1,157 @@
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   width: 100%;
 }
 
-.col-1 {
-  width: 7.05%;
+@media (min-width: 980px) {
+  .l-col-1 {
+    width: 7.05%;
+  }
+
+  .l-col-2 {
+    width: 15.5%;
+  }
+
+  .l-col-3 {
+    width: 23.95%;
+  }
+
+  .l-col-4 {
+    width: 32.4%;
+  }
+
+  .l-col-5 {
+    width: 40.85%;
+  }
+
+  .l-col-6 {
+    width: 49.3%;
+  }
+
+  .l-col-7 {
+    width: 57.75%;
+  }
+
+  .l-col-8 {
+    width: 66.2%;
+  }
+
+  .l-col-9 {
+    width: 74.65%;
+  }
+
+  .l-col-10 {
+    width: 83.1%;
+  }
+
+  .l-col-11 {
+    width: 91.55%;
+  }
+
+  .l-col-12 {
+    width: 100%;
+  }
 }
 
-.col-2 {
-  width: 15.5%;
+@media only screen and (min-width: 661px) and (max-width: 979px) {
+  .m-col-1 {
+    width: 7.05%;
+  }
+
+  .m-col-2 {
+    width: 15.5%;
+  }
+
+  .m-col-3 {
+    width: 23.95%;
+  }
+
+  .m-col-4 {
+    width: 32.4%;
+  }
+
+  .m-col-5 {
+    width: 40.85%;
+  }
+
+  .m-col-6 {
+    width: 49.3%;
+  }
+
+  .m-col-7 {
+    width: 57.75%;
+  }
+
+  .m-col-8 {
+    width: 66.2%;
+  }
+
+  .m-col-9 {
+    width: 74.65%;
+  }
+
+  .m-col-10 {
+    width: 83.1%;
+  }
+
+  .m-col-11 {
+    width: 91.55%;
+  }
+
+  .m-col-12 {
+    width: 100%;
+  }
 }
 
-.col-3 {
-  width: 23.95%;
-}
+@media only screen and (min-width: 0px) and (max-width: 660px) {
+  .s-col-1 {
+    width: 7.05%;
+  }
 
-.col-4 {
-  width: 32.4%;
-}
+  .s-col-2 {
+    width: 15.5%;
+  }
 
-.col-5 {
-  width: 40.85%;
-}
+  .s-col-3 {
+    width: 23.95%;
+  }
 
-.col-6 {
-  width: 49.3%;
-}
+  .s-col-4 {
+    width: 32.4%;
+  }
 
-.col-7 {
-  width: 57.75%;
-}
+  .s-col-5 {
+    width: 40.85%;
+  }
 
-.col-8 {
-  width: 66.2%;
-}
+  .s-col-6 {
+    width: 49.3%;
+  }
 
-.col-9 {
-  width: 74.65%;
-}
+  .s-col-7 {
+    width: 57.75%;
+  }
 
-.col-10 {
-  width: 83.1%;
-}
+  .s-col-8 {
+    width: 66.2%;
+  }
 
-.col-11 {
-  width: 91.55%;
-}
+  .s-col-9 {
+    width: 74.65%;
+  }
 
-.col-12 {
-  width: 100%;
+  .s-col-10 {
+    width: 83.1%;
+  }
+
+  .s-col-11 {
+    width: 91.55%;
+  }
+
+  .s-col-12 {
+    width: 100%;
+  }
 }

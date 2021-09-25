@@ -45,6 +45,10 @@ body {
         width: 25px;
       }
     }
+
+    .wrap-nowrap {
+      flex-wrap: nowrap;
+    }
   }
 
   .list-product {
@@ -85,5 +89,30 @@ body {
 
   .text-align-center {
     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 661px) and (max-width: 979px) {
+  .container {
+    .img-detail-product {
+      height: 340px;
+      width: 340px;
+    }
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 660px) {
+  .container {
+    .detail-product {
+      button {
+        height: 35px;
+        width: 100%;
+      }
+    }
+
+    .img-detail-product {
+      height: 100%;
+      width: 100%;
+    }
   }
 }

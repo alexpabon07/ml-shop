@@ -7,11 +7,11 @@ export default class NavBar extends React.Component {
     return (
       <div className="navbar">
         <div className="row center-content align-item-center">
-          <div className="col-1 text-align-center">
+          <div className="l-col-1 m-col-2 s-col-12 text-align-center">
             <img src={logo} className="img-logo-navbar" id="img-logo-ml" alt="logo mercado libre" />
           </div>
-          <div className="col-9">
-            <div className="row center-content">
+          <div className="l-col-9 m-col-8 s-col-10">
+            <div className="row wrap-nowrap">
               <input type="text" className="" placeholder="Nunca dejes de buscar" />
               <button type="submit"><img src={search} className="button-search-navbar" id="img-search" alt="Botón de busqueda" /></button>
             </div>
