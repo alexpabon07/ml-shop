@@ -10,6 +10,7 @@ $text-color-light-grey: #999999;
 $font-size-12: 12px;
 $font-size-14: 14px;
 $font-size-16: 16px;
+$font-size-18: 18px;
 $font-size-24: 24px;
 $font-size-28: 28px;
 $font-size-46: 46px;
@@ -47,6 +48,14 @@ $spacing-large: 32px;
 
 .margin-bottom-small {
     margin-bottom: $spacing-small;
+}
+
+.margin-top-large {
+    margin-top: $spacing-large;
+}
+
+.margin-bottom-large {
+    margin-bottom: $spacing-large;
 }
 
 .margin-left {
