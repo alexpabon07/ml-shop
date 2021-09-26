@@ -3,7 +3,16 @@ import logo from './../assets/Logo_ML@2x.png.png';
 import search from './../assets/ic_Search@2x.png.png';
 
 export default class NavBar extends React.Component {
+
   render() {
+    const { searchProducts } = this.props;
+
+    const querySearchRef = React.createRef();
+
+    const getQuerySearch = () => {
+      const query = querySearchRef.current.value;
+      searchProducts(query);
+    }
     return (
       <div className="navbar">
         <div className="row center-content align-item-center">
@@ -12,8 +21,8 @@ export default class NavBar extends React.Component {
           </div>
           <div className="l-col-9 m-col-8 s-col-10">
             <div className="row wrap-nowrap">
-              <input type="text" className="" placeholder="Nunca dejes de buscar" />
-              <button type="submit"><img src={search} className="button-search-navbar" id="img-search" alt="Botón de busqueda" /></button>
+              <input ref={querySearchRef} type="text" className="" placeholder="Nunca dejes de buscar" />
+              <button onClick={getQuerySearch} type="button"><img src={search} className="button-search-navbar" id="img-search" alt="Botón de busqueda" /></button>
             </div>
           </div>
         </div>
