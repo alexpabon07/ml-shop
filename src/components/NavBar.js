@@ -1,17 +1,17 @@
 import React from "react";
+import { withRouter } from 'react-router-dom'
 import logo from './../assets/Logo_ML@2x.png.png';
 import search from './../assets/ic_Search@2x.png.png';
 
-export default class NavBar extends React.Component {
+class NavBar extends React.Component {
 
   render() {
-    const { searchProducts } = this.props;
-
+    const { history } = this.props;
     const querySearchRef = React.createRef();
 
     const getQuerySearch = () => {
       const query = querySearchRef.current.value;
-      searchProducts(query);
+      history.push(`/items?search=${query}`);
     }
     return (
       <div className="navbar">
@@ -30,3 +30,5 @@ export default class NavBar extends React.Component {
     );
   }
 }
+
+export default withRouter(NavBar);

@@ -1,11 +1,17 @@
 import React from "react";
+import { withRouter } from "react-router-dom"
 import image from "./../assets/audifonos.png"
 
-export default class Product extends React.Component {
+class Product extends React.Component {
   render() {
-    const { price, address, title, condition } = this.props.product;
+    const { id, price, address, title, condition } = this.props.product;
+    const { history } = this.props;
+    const getQuerySearch = () => {
+      history.push(`/items/${id}`);
+    }
+
     return (
-      <div className="product">
+      <div className="product" onClick={getQuerySearch}>
         <div className="row margin-top-small">
           <div className="l-col-3 m-col-3 s-col-12 margin-small text-align-center">
             <img src={image} className="img-product" id="img-product" alt="imagen producto mercado libre" />
@@ -27,3 +33,5 @@ export default class Product extends React.Component {
     );
   }
 }
+
+export default withRouter(Product);
