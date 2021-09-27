@@ -11,7 +11,9 @@ class NavBar extends React.Component {
 
     const getQuerySearch = () => {
       const query = querySearchRef.current.value;
-      history.push(`/items?search=${query}`);
+      if (query) {
+        history.push(`/items?search=${query}`);
+      }
     }
     return (
       <div className="navbar">
