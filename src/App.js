@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, Switch } from 'react-router';
+import { withRouter } from 'react-router-dom';
 import DetailProduct from './components/DetailProduct';
 import ListProducts from './components/ListProducts';
 import NavBar from './components/NavBar';
@@ -7,75 +9,79 @@ class App extends React.Component {
 
   constructor() {
     super();
-
     this.state = {
-      search: false,
       resultSearch: [],
       resultSearchById: {},
       resumeSearchById: ''
     }
   }
 
-  componentDidMount() {
-    const query = 'diadema gamer';
-    const idQuery = 'MLA909265824';
-    this.searchProducts(query);
-    this.searchProductById(idQuery);
-    this.searchResumeProductById(idQuery);
-  }
-
-  searchProducts = async (query) => {
-    const endpoint = `https://api.mercadolibre.com/sites/MLA/search?q=​${query}`;
-    console.log(endpoint);
+  searchProducts = async (query, functionCallback) => {
+    const endpoint = 'https://api.mercadolibre.com/sites/MLA/search?q=' + query;
     const headers = { 'Content-Type': 'application/json' };
     const method = 'GET';
     await fetch(endpoint, { headers, method }).then(
       response => response.json()
     ).then(data => {
       this.setState(
-        { resultSearch: data.results }
+        { resultSearch: data.results }, () => {
+          if (typeof (functionCallback) != 'undefined') {
+            functionCallback(this.state.resultSearch);
+          }
+        }
       )
     });
   }
 
-  searchProductById = async (id) => {
+  searchProductById = async (id, functionCallback) => {
     const endpoint = `https://api.mercadolibre.com/items/${id}`;
-    console.log(endpoint);
     const headers = { 'Content-Type': 'application/json' };
     const method = 'GET';
     await fetch(endpoint, { headers, method }).then(
       response => response.json()
     ).then(data => {
       this.setState(
-        { resultSearchById: data }
+        { resultSearchById: data }, () => {
+          if (typeof (functionCallback) != 'undefined') {
+            functionCallback(this.state.resultSearchById);
+          }
+        }
       )
     });
   }
 
-  searchResumeProductById = async (id) => {
+  searchResumeProductById = async (id, functionCallback) => {
     const endpoint = `https://api.mercadolibre.com/items/${id}/description`;
-    console.log(endpoint);
     const headers = { 'Content-Type': 'application/json' };
     const method = 'GET';
     await fetch(endpoint, { headers, method }).then(
       response => response.json()
     ).then(data => {
       this.setState(
-        { resumeSearchById: data.plain_text }
+        { resumeSearchById: data.plain_text }, () => {
+          if (typeof (functionCallback) != 'undefined') {
+            functionCallback(this.state.resumeSearchById);
+          }
+        }
       )
     });
   }
 
   render() {
-    const { resultSearch, resultSearchById, resumeSearchById } = this.state;
     return (
       <div className="container">
         <NavBar searchProducts={this.searchProducts} />
-        <ListProducts resultSearch={resultSearch} />
-        <DetailProduct resultSearchById={resultSearchById} resumeSearchById={resumeSearchById} />
+        <Switch>
+          <Route exact path="/items" >
+            <ListProducts searchProducts={this.searchProducts} searchProductById={this.searchProductById} searchResumeProductById={this.searchResumeProductById} />
+          </Route>
+          <Route exact path="/items/:id">
+            <DetailProduct searchProductById={this.searchProductById} searchResumeProductById={this.searchResumeProductById} />
+          </Route>
+        </Switch>
       </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);
