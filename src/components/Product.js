@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom"
 class Product extends React.Component {
   render() {
     const { id, price, address, title, condition, thumbnail } = this.props.product;
-    let image = thumbnail;
     const { history } = this.props;
     const getQuerySearch = () => {
       history.push(`/items/${id}`);
@@ -14,7 +13,7 @@ class Product extends React.Component {
       <div className="product" onClick={getQuerySearch}>
         <div className="row margin-top-small">
           <div className="l-col-3 m-col-3 s-col-12 margin-small text-align-center">
-            <img src={image} className="img-product" id="img-product" alt="imagen producto mercado libre" />
+            <img src={thumbnail} className="img-product" id="img-product" alt="imagen producto mercado libre" />
           </div>
           <div className="l-col-8 m-col-8 s-col-12">
             <div className="row">
