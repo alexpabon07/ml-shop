@@ -1,10 +1,10 @@
 import React from "react";
 import { withRouter } from "react-router-dom"
-import image from "./../assets/audifonos.png"
 
 class Product extends React.Component {
   render() {
-    const { id, price, address, title, condition } = this.props.product;
+    const { id, price, address, title, condition, thumbnail } = this.props.product;
+    let image = thumbnail;
     const { history } = this.props;
     const getQuerySearch = () => {
       history.push(`/items/${id}`);

@@ -1,6 +1,5 @@
 import React from "react";
 import { withRouter } from "react-router";
-import image from "./../assets/audifonos.png"
 
 class DetailProduct extends React.Component {
   currentId = '';
@@ -8,7 +7,8 @@ class DetailProduct extends React.Component {
     super(props);
     this.state = ({
       product: {},
-      productdesc: ''
+      productdesc: '',
+      image: ''
     });
   }
 
@@ -20,7 +20,7 @@ class DetailProduct extends React.Component {
       this.currentId = this.props.match.params.id;
 
       searchProductById(currentContext.currentId, function (product) {
-        currentContext.setState({ product: product });
+        currentContext.setState({ product: product, image: product.pictures[0].url });
         searchResumeProductById(currentContext.currentId, function (productdesc) {
           currentContext.setState({ productdesc: productdesc });
         });
@@ -30,7 +30,7 @@ class DetailProduct extends React.Component {
       <div className="detail-product">
         <div className="row">
           <div className="l-col-6 m-col-6 s-col-12">
-            <img src={image} className="img-detail-product" alt="imagen producto mercado libre" />
+            <img src={this.state.image} className="img-detail-product" alt="imagen producto mercado libre" />
           </div>
           <div className="l-col-4 m-col-6 s-col-12 margin-top-large">
             <div className="font-size-14 margin-bottom-small">{this.state.product.condition} - {this.state.product.sold_quantity} vendidos </div>
